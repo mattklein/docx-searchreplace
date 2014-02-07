@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Doug's fancy shmancy .docx search/replace webapp</h1>
+
+<h2>Now enter the search/replace terms</h2>
+<p>Note that the order matters here -- the terms will be applied in the in the order that you provide them (so enter "Doug Klein" -> "OGC" before "Doug" -> "OGC").</p>
+
+<form action="configure_search_replace" method="post">
+<table>
+<tr><td>From</td><td>To</td></tr>
+<tr><td><input type="text" name="from1"/></td><td><input type="text" name="to1"/></td></tr>
+<tr><td><input type="text" name="from2"/></td><td><input type="text" name="to2"/></td></tr>
+<tr><td><input type="text" name="from3"/></td><td><input type="text" name="to3"/></td></tr>
+<tr><td><input type="text" name="from4"/></td><td><input type="text" name="to4"/></td></tr>
+<tr><td><input type="text" name="from5"/></td><td><input type="text" name="to5"/></td></tr>
+</table>
+
+<h2>And pick what files within the archive that the search/replace should be performed in</h2>
+<table>
+<tr><td><b>Filename</b></td><td><b>Search/Replace In It?</b></td></tr>
+{% for fname in filenames %}
+<tr><td>{{ fname }}</td><td><input type="checkbox" name="{{ fname }}" /></td></tr>
+{% endfor %}
+</table>
+<p><input type="submit" value="Download Edited Version"/></p>
+</form>
+</body>
+</html>

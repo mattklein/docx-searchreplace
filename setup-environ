@@ -1,0 +1,8 @@
+# This needs to be sourced, not executed
+. ~/code/misc/doug-docx-searchreplace/docx-virtualenv/bin/activate
+
+export PYTHONPATH=~/code/misc/doug-docx-searchreplace/djangoproj
+export DJANGO_SETTINGS_MODULE=djangoproj.settings
+
+cd ~/code/misc/doug-docx-searchreplace/djangoproj
+
